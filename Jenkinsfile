@@ -3,7 +3,8 @@
 node {
 
     properties([
-            [pipelineTriggers([[$class: 'GitHubPushTrigger']])],
+            //[pipelineTriggers([[$class: 'GitHubPushTrigger']])],
+            [pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/15 * * * *')])],
             parameters([
                     string(name: 'NODE_LABEL', defaultValue: 'master', description: 'Input node for run'),
                     booleanParam(name: 'RUN_STAGE_1', defaultValue: true, description: 'Run Stage 1: Build an artifact'),
