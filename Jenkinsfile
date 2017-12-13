@@ -11,9 +11,16 @@ node {
             ])
     ])
     println "Hello...from Jeninsfile"
-    println "NODE_LABEL : ${params.NODE_LABEL}"
-    println "RUN_STAGE_1 : ${params.RUN_STAGE_1}"
-    println "RUN_STAGE_2 : ${params.RUN_STAGE_2}"
-    println "RUN_STAGE_3 : ${params.RUN_STAGE_3}"
+
+    stage("Test1") {
+        println "NODE_LABEL : ${params.NODE_LABEL}"
+    }
+
+    stage("Test2") {
+        println "RUN_STAGE_1 : ${params.RUN_STAGE_1}"
+        println "RUN_STAGE_2 : ${params.RUN_STAGE_2}"
+        println "RUN_STAGE_3 : ${params.RUN_STAGE_3}"
+    }
+
 
 }
