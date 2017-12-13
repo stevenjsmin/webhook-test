@@ -14,7 +14,8 @@ node("master") {
                     booleanParam(name: 'RUN_STAGE_3', defaultValue: true, description: 'Run Stage 3: Deploy a CFN stack')
             ])
     ])
-    println "Hello...from Jeninsfile"
+    println "Hello...from Jeninsfile 1"
+    println "Hello...from Jeninsfile 2"
 
     stage("Test1") {
         println "NODE_LABEL : ${params.NODE_LABEL}"
