@@ -1,28 +1,33 @@
 #!/usr/bin/env groovy
 
-git url: "https://github.com/stevenjsmin/webhook-test.git", branch: 'develop'
+node("master") {
 
-properties([
-        //[pipelineTriggers([[$class: 'GitHubPushTrigger']])],
-        pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/1 * * * *')]),
-        parameters([
-                string(name: 'NODE_LABEL', defaultValue: 'master', description: 'Input node for run'),
-                booleanParam(name: 'RUN_STAGE_1', defaultValue: true, description: 'Run Stage 1: Build an artifact'),
-                booleanParam(name: 'RUN_STAGE_2', defaultValue: true, description: 'Run Stage 2: Create an AMI'),
-                booleanParam(name: 'RUN_STAGE_3', defaultValue: true, description: 'Run Stage 3: Deploy a CFN stack')
-        ])
-])
-println "Hello...from Jeninsfile"
-println "Hello...from Jeninsfile"
-println "Hello...from Jeninsfile"
-println "Hello...from Jeninsfile"
+    git url: "https://github.com/stevenjsmin/webhook-test.git", branch: 'develop'
 
-stage("Test1") {
-    println "NODE_LABEL : ${params.NODE_LABEL}"
-}
+    properties([
+            //[pipelineTriggers([[$class: 'GitHubPushTrigger']])],
+            pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/1 * * * *')]),
+            parameters([
+                    string(name: 'NODE_LABEL', defaultValue: 'master', description: 'Input node for run'),
+                    booleanParam(name: 'RUN_STAGE_1', defaultValue: true, description: 'Run Stage 1: Build an artifact'),
+                    booleanParam(name: 'RUN_STAGE_2', defaultValue: true, description: 'Run Stage 2: Create an AMI'),
+                    booleanParam(name: 'RUN_STAGE_3', defaultValue: true, description: 'Run Stage 3: Deploy a CFN stack')
+            ])
+    ])
+    println "Hello...from Jeninsfile"
+    println "Hello...from Jeninsfile"
+    println "Hello...from Jeninsfile"
+    println "Hello...from Jeninsfile"
 
-stage("Test2") {
-    println "RUN_STAGE_1 : ${params.RUN_STAGE_1}"
-    println "RUN_STAGE_2 : ${params.RUN_STAGE_2}"
-    println "RUN_STAGE_3 : ${params.RUN_STAGE_3}"
+    stage("Test1") {
+        println "NODE_LABEL : ${params.NODE_LABEL}"
+    }
+
+    stage("Test2") {
+        println "RUN_STAGE_1 : ${params.RUN_STAGE_1}"
+        println "RUN_STAGE_2 : ${params.RUN_STAGE_2}"
+        println "RUN_STAGE_3 : ${params.RUN_STAGE_3}"
+    }
+
+
 }
