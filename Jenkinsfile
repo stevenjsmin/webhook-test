@@ -14,6 +14,7 @@ node {
     ])
     println "Hello...from Jeninsfile"
     println "Hello...from Jeninsfile"
+    println "Hello...from Jeninsfile"
 
     stage("Test1") {
         println "NODE_LABEL : ${params.NODE_LABEL}"
