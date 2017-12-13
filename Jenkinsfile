@@ -2,6 +2,8 @@
 
 node {
 
+    checkout scm
+
     properties([
             //[pipelineTriggers([[$class: 'GitHubPushTrigger']])],
             [pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/1 * * * *')])],
