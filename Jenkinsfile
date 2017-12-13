@@ -2,7 +2,7 @@
 
 node {
 
-    checkout scm
+    git url: "https://github.com/stevenjsmin/webhook-test.git", branch: 'develop'
 
     properties([
             //[pipelineTriggers([[$class: 'GitHubPushTrigger']])],
