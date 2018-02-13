@@ -46,6 +46,16 @@ node("master") {
 
             println("##############")
 
+
+            echo 'Email test'
+            mail subject: "[JENKINS] ${env.JOB_NAME} failed",
+                    attachLog: true,
+                    // body: "Build failed (see ${env.BUILD_URL}: ${error})",
+                    body: "Build failed : ${fileContents}",
+                    to: "stevenmin@nbnco.com.au",
+                    from: "noreply@crunchcode.com.au"
+            throw error
+
         }
     }
 
