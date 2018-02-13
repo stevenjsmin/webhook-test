@@ -44,7 +44,6 @@ node("master") {
 
             println(fileContents);
 
-
             println("##############")
 
         }
