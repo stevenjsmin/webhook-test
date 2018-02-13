@@ -45,7 +45,7 @@ node("master") {
             //println(fileContents);
 
             println("##############1")
-            println( "${BUILD_LOG_EXCERPT, start = '^##############', end='^Finished: FAILURE'}")
+            println( "${BUILD_LOG_EXCERPT}")
             println("##############2")
 
 
