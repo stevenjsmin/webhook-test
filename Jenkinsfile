@@ -54,7 +54,7 @@ node("master") {
                     body: "Build failed : ${fileContents}",
                     to: "stevenmin@nbnco.com.au",
                     from: "noreply@crunchcode.com.au"
-            throw error
+            throw e
 
         }
     }
