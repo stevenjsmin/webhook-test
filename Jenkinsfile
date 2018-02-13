@@ -45,7 +45,7 @@ node("master") {
             //println(fileContents);
 
             println("##############1")
-            cho "${BUILD_LOG}"
+            println( "${BUILD_LOG_EXCERPT, start = '^##############', end='^Finished: FAILURE'}")
             println("##############2")
 
 
