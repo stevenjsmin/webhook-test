@@ -46,7 +46,6 @@ node("master") {
 
             println("##############")
 
-
             echo 'Email test'
             mail subject: "[JENKINS] ${env.JOB_NAME} failed",
                     attachLog: true,
@@ -55,7 +54,6 @@ node("master") {
                     to: "stevenmin@nbnco.com.au",
                     from: "noreply@crunchcode.com.au"
             throw e
-
         }
     }
 
