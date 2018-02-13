@@ -35,6 +35,7 @@ node("master") {
         }catch(Exception e) {
             println ("Hello~~~" + e.getMessage())
             println ("WORKSPACE:" + env.WORKSPACE)
+            println ("BUILD_URL:" + env.BUILD_URL)
 
 
 
