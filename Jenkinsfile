@@ -42,17 +42,18 @@ node("master") {
 
             String fileContents = new File(env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log").getText('UTF-8')
 
-            println(fileContents);
+            //println(fileContents);
 
             println("##############")
 
             echo 'Email test'
-            mail subject: "[JENKINS] ${env.JOB_NAME} failed",
+            emailext( subject: "[JENKINS] ${env.JOB_NAME} failed",
                     attachLog: true,
                     // body: "Build failed (see ${env.BUILD_URL}: ${error})",
                     body: "Build failed : ${fileContents}",
                     to: "stevenmin@nbnco.com.au",
                     from: "noreply@crunchcode.com.au"
+            )
             throw e
         }
     }
