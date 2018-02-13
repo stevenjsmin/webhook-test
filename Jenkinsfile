@@ -44,7 +44,10 @@ node("master") {
 
             //println(fileContents);
 
-            println("##############")
+            println("##############1")
+            cho "${BUILD_LOG}"
+            println("##############2")
+
 
             echo 'Email test'
             emailext( subject: "[JENKINS] ${env.JOB_NAME} failed",
