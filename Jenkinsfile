@@ -38,7 +38,12 @@ node("master") {
             println ("WORKSPACE:" + env.WORKSPACE)
             println ("BUILD_URL:" + env.BUILD_URL)
             println ("JENKINS_HOME:" + env.JENKINS_HOME)
-            println ("BUILD_FILE:" + env.JENKINS_HOME + "jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log")
+            println ("BUILD_FILE:" + env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log")
+
+            String fileContents = new File(env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log").text
+
+            println(fileContents);
+
 
 
 
