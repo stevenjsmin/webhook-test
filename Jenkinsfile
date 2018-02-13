@@ -28,7 +28,8 @@ node("master") {
 
         try{
             println "예외처리 테스트"
-            throw new Exception("어디한번 보자..")
+            //throw new Exception("어디한번 보자..")
+            error("오류 발생...")
 
         }catch(Exception e) {
             println ("Hello~~~" + e.getMessage())
