@@ -33,10 +33,14 @@ node("master") {
             println "예외처리 테스트 2"
 
         }catch(Exception e) {
+            // /root/.jenkins/jobs/JenkinsPipeline1/builds
             println ("Hello~~~" + e.getMessage())
             println ("WORKSPACE:" + env.WORKSPACE)
             println ("BUILD_URL:" + env.BUILD_URL)
             println ("JENKINS_HOME:" + env.JENKINS_HOME)
+            println ("BUILD_FILE:" + env.JENKINS_HOME + "jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log")
+
+
 
 
 
