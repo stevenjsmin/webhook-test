@@ -40,7 +40,7 @@ node("master") {
             println ("JENKINS_HOME:" + env.JENKINS_HOME)
             println ("BUILD_FILE:" + env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log")
 
-            String fileContents = new File(env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log").text
+            String fileContents = new File(env.JENKINS_HOME + "/jobs/" + env.JOB_NAME + "/builds/" + env.BUILD_NUMBER + "/log").getText('UTF-8')
 
             println(fileContents);
 
