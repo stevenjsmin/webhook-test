@@ -25,7 +25,17 @@ node("master") {
         println "RUN_STAGE_1 : ${params.RUN_STAGE_1}"
         println "RUN_STAGE_2 : ${params.RUN_STAGE_2}"
         println "RUN_STAGE_3 : ${params.RUN_STAGE_3}"
+
+        try{
+            println "예외처리 테스트"
+            throw new Exception("어디한번 보자..")
+
+        }catch(Exception e) {
+            println ("Hello~~~" + e.getMessage())
+        }
     }
+
+
 
 
 }
