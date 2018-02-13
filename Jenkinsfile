@@ -36,6 +36,7 @@ node("master") {
             println ("Hello~~~" + e.getMessage())
             println ("WORKSPACE:" + env.WORKSPACE)
             println ("BUILD_URL:" + env.BUILD_URL)
+            println ("JENKINS_HOME:" + env.JENKINS_HOME)
 
 
 
