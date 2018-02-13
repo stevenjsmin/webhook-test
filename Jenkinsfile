@@ -34,6 +34,12 @@ node("master") {
 
         }catch(Exception e) {
             println ("Hello~~~" + e.getMessage())
+            println ("WORKSPACE:" + ${WORKSPACE})
+
+
+
+            println("##############")
+
         }
     }
 
