@@ -44,6 +44,7 @@ node("master") {
 
             //println(fileContents);
 
+            def build = Thread.currentThread().executable;
             println("##############1")
 //            println( "${BUILD_LOG_EXCERPT}")
             println( build.getLog())
