@@ -45,12 +45,13 @@ node("master") {
             //println(fileContents);
 
             println("##############1")
-            println( "${BUILD_LOG_EXCERPT}")
+//            println( "${BUILD_LOG_EXCERPT}")
+            println( build.getLog())
             println("##############2")
 
 
             echo 'Email test'
-            emailext( subject: "[JENKINS] ${env.JOB_NAME} failed",
+                emailext( subject: "[JENKINS] ${env.JOB_NAME} failed",
                     attachLog: true,
                     // body: "Build failed (see ${env.BUILD_URL}: ${error})",
                     body: "Build failed : ${fileContents}",
