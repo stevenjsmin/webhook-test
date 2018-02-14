@@ -50,7 +50,6 @@ node("master") {
             println( build.getLog())
             println("##############2")
 
-
             echo 'Email test'
                 emailext( subject: "[JENKINS] ${env.JOB_NAME} failed",
                     attachLog: true,
