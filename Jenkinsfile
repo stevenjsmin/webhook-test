@@ -58,6 +58,7 @@ node("master") {
                     to: "stevenmin@nbnco.com.au",
                     from: "noreply@crunchcode.com.au"
             )
+
             throw e
         }
     }
